@@ -12,9 +12,10 @@ def SquadFiles(country):
     with open(filename) as Squad:
         SquadObject = csv.reader(Squad)
         listofSquad=[]
+        listofSquad.append(['Number','Name','Position'])
         for row in SquadObject:
             listofSquad.append(row,)
-        print(tabulate(listofSquad))
+        print(tabulate(listofSquad,tablefmt='grid'))
 
         print()
 def AllTeams():
@@ -28,6 +29,7 @@ def menu():
 
 def Engine(country):
     listofcountries = ['Qatar','France','Portugal','Senegal','Saudi Arabia']
+    #Here also change into tabulate format
     print("{:<13} {:<14} {:<20} {:<25} {:<15} {:<15} {:<9} {:<5}".format('Match Number','Round Number','Date&Time','Location','Home Team','Away Team','Group','Result'))
     for check_country in listofcountries:
         if country == check_country:
