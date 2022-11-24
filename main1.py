@@ -1,10 +1,26 @@
 import csv
-
+from tabulate import tabulate
 
 
 fixtures = open('fixtures.csv')
 csv_reader = csv.reader(fixtures)
 
+
+#Country should be the variable from the option
+def SquadFiles(country):
+    filename = country+'.csv'
+    with open(filename) as Squad:
+        SquadObject = csv.reader(Squad)
+        listofSquad=[]
+        for row in SquadObject:
+            listofSquad.append(row,)
+        print(tabulate(listofSquad))
+
+        print()
+def AllTeams():
+    pass
+
+    
 def menu():
 
     country = input('Enter the country you want to know the fixtures:')
@@ -28,3 +44,4 @@ run = menu()
 
 
 Engine(run)
+SquadFiles(run)
